@@ -36,9 +36,10 @@ To support cash payments, we can provide instructions on how customers can pay i
 - **Pages**
   - HomePage: Contains the order form for neighbors to select items and submit their orders.
     - Design: A centered content div: 85% width on fullscreen, 95% on medium, and 100% width on small screens, with primary and secondary colors as background and shadowed border to appear to be floating on top of the MainLayout background.
-  - OrdersPage (Scaffold): Displays the list of pending orders for the seller to manage.
-  - InventoryPage (Scaffold): Allows the daughter to manage the inventory by updating item quantities.
 
+- **Scaffolds**
+  - Orders: Displays the list of pending orders for the seller to manage.
+  - Inventory: Allows the seller to manage the inventory by updating item quantities.
 
 - **Components**
   - QRCode: A component to display the generated QR code.
@@ -51,7 +52,6 @@ To support cash payments, we can provide instructions on how customers can pay i
 
 - **Cells**
   - ItemsCell: Fetches the list of available items (used in HomePage).
-
 
 ## Style Guide
 
