@@ -10,6 +10,16 @@ export const orderItem = ({ id }) => {
   });
 };
 
+export const createOrder = ({ orderItems }) => {
+  return db.order.create({
+    data: {
+      items: {
+        create: orderItems,
+      },
+    },
+  });
+};
+
 export const createOrderItem = ({ input }) => {
   return db.orderItem.create({
     data: input,

@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="home">
       <header>
-<p>The Cookie Stand</p>
+        <p>The Cookie Stand</p>
       </header>
       <main>
         <section className="orderform">

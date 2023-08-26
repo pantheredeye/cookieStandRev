@@ -13,6 +13,14 @@ export const schema = gql`
     orderItem(id: Int!): OrderItem @requireAuth
   }
 
+  input CreateOrderInput {
+    orderNumber: String!
+    userId: Int!
+    paymentMethod: String!
+    status: String!
+    orderItems: [CreateOrderItemInput!]!
+  }
+
   input CreateOrderItemInput {
     itemId: Int!
     orderId: Int!
@@ -26,6 +34,7 @@ export const schema = gql`
   }
 
   type Mutation {
+    createOrder(input: CreateOrderInput!): Order! @requireAuth
     createOrderItem(input: CreateOrderItemInput!): OrderItem! @requireAuth
     updateOrderItem(id: Int!, input: UpdateOrderItemInput!): OrderItem!
       @requireAuth

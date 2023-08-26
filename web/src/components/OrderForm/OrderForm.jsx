@@ -3,6 +3,23 @@
 import { useMutation } from '@apollo/client';
 import { placeOrderMutation } from '../api/src/graphql/mutations/placeOrder';
 
+const placeOrderMutation = gql`
+  mutation PlaceOrder($order: CreateOrderInput!, $orderItems: [CreateOrderItemInput!]!) {
+    createOrder(input: $order) {
+      id
+      status
+    }
+    createOrderItems(input: $orderItems) {
+      id
+      quantity
+      item {
+        name
+        price
+      }
+    }
+  }
+`;
+
 const OrderForm = ({ orderItems, setOrderItems }) => {
   // Use the `useMutation` hook to execute the `placeOrderMutation`
   const [placeOrder, { loading, error }] = useMutation(placeOrderMutation);
