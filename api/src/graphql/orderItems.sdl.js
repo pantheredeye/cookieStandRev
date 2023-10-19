@@ -35,7 +35,7 @@ export const schema = gql`
 
   type Mutation {
     createOrder(input: CreateOrderInput!): Order! @requireAuth
-    createOrderItem(input: CreateOrderItemInput!): OrderItem! @requireAuth
+    createOrderItems(input: [CreateOrderItemInput!]!): OrderItem! @requireAuth
     updateOrderItem(id: Int!, input: UpdateOrderItemInput!): OrderItem!
       @requireAuth
     deleteOrderItem(id: Int!): OrderItem! @requireAuth

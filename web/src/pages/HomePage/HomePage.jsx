@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from '@redwoodjs/router';
 import { OrderForm } from './OrderForm';
 
 const HomePage = () => {

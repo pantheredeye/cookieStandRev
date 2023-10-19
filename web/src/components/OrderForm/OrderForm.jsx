@@ -1,24 +1,24 @@
 // web/src/components/OrderForm.tsx
 
 import { useMutation } from '@apollo/client';
-import { placeOrderMutation } from '../api/src/graphql/mutations/placeOrder';
+// import { placeOrderMutation } from '../api/src/graphql/mutations/placeOrder';
 
-const placeOrderMutation = gql`
-  mutation PlaceOrder($order: CreateOrderInput!, $orderItems: [CreateOrderItemInput!]!) {
-    createOrder(input: $order) {
-      id
-      status
-    }
-    createOrderItems(input: $orderItems) {
-      id
-      quantity
-      item {
-        name
-        price
-      }
-    }
-  }
-`;
+// const placeOrderMutation = gql`
+//   mutation PlaceOrder($order: CreateOrderInput!, $orderItems: [CreateOrderItemInput!]!) {
+//     createOrder(input: $order) {
+//       id
+//       status
+//     }
+//     createOrderItems(input: $orderItems) {
+//       id
+//       quantity
+//       item {
+//         name
+//         price
+//       }
+//     }
+//   }
+// `;
 
 const OrderForm = ({ orderItems, setOrderItems }) => {
   // Use the `useMutation` hook to execute the `placeOrderMutation`
@@ -28,15 +28,16 @@ const OrderForm = ({ orderItems, setOrderItems }) => {
     event.preventDefault();
     try {
       // Call the `mutate()` function with the appropriate inputs
-      const result = await placeOrder({
-        variables: {
-          orderItems: orderItems.map((item) => ({
-            name: item.name,
-            price: item.price,
-            quantity: item.quantity,
-          })),
-        },
-      });
+      // const result = await placeOrder({
+      //   variables: {
+      //     orderItems: orderItems.map((item) => ({
+      //       name: item.name,
+      //       price: item.price,
+      //       quantity: item.quantity,
+      //     })),
+      //   },
+      // });
+      console.log('placeholder to work front-end')
       // Handle the response from the server
       if (!result || !result.data) {
         throw new Error('Failed to place order');

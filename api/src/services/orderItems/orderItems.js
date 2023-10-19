@@ -26,6 +26,12 @@ export const createOrderItem = ({ input }) => {
   });
 };
 
+export const createOrderItems = ({ input }) => {
+  return db.orderItem.createMany({
+    data: input,
+  });
+};
+
 export const updateOrderItem = ({ id, input }) => {
   return db.orderItem.update({
     data: input,
